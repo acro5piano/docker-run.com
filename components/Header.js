@@ -20,7 +20,7 @@ export const Header = () => (
 
       <style jsx>{`
         .container {
-          padding: 12px;
+          padding: 18px;
           max-width: 1024px;
           margin: auto;
         }
