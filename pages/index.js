@@ -9,7 +9,7 @@ export default () => (
   <>
     <Head>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+      <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans|Roboto" rel="stylesheet" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       <link rel="shortcut icon" href="/static/images/favicon.ico" />
     </Head>
@@ -20,7 +20,9 @@ export default () => (
         box-sizing: border-box;
       }
       body {
-        font-family: 'Noto Sans JP', sans-serif !important;
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Nanum Gothic', sans-serif;
         font-size: 14px;
         line-height: 1.67;
         color: #666;
