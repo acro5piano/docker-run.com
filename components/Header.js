@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Button } from './Button'
 
 export const Header = () => (
@@ -5,15 +6,18 @@ export const Header = () => (
     <div className="container">
       <div className="header-container">
         <div className="header-left">
-          <img src="/static/images/logo.png" />
+          <Link href="/">
+            <a>
+              <img src="/static/images/logo.png" />
+            </a>
+          </Link>
           <li>Features</li>
           <li>Pricing</li>
           <li>Company</li>
         </div>
         <div className="header-left">
-          <li>Login</li>
           <li>
-            <Button title="Try for free" />
+            <Button title="Subscribe" />
           </li>
         </div>
       </div>

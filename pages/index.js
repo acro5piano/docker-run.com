@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Title } from '../components/Title'
@@ -8,31 +9,8 @@ import { Gradation } from '../components/Gradation'
 export default () => (
   <>
     <Head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-      <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans|Roboto" rel="stylesheet" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <link rel="shortcut icon" href="/static/images/favicon.ico" />
+      <title>Docker Run</title>
     </Head>
-    <style global jsx>{`
-      @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&subset=japanese');
-      @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        font-family: 'Open Sans', sans-serif;
-        font-family: 'Roboto', sans-serif;
-        font-family: 'Nanum Gothic', sans-serif;
-        font-size: 14px;
-        line-height: 1.67;
-        color: #666;
-      }
-      input,
-      textarea {
-        line-height: 1.6;
-        font-size: 16px;
-      }
-    `}</style>
 
     <Gradation>
       <div className="landing-container">
@@ -52,7 +30,11 @@ export default () => (
             <input placeholder="nginx:latest" />
           </div>
           <div className="form-container-button">
-            <Button title="Run your container" />
+            <Link href="/try">
+              <a>
+                <Button title="Run your container" />
+              </a>
+            </Link>
           </div>
         </div>
         <style jsx>{`

@@ -5,7 +5,7 @@ export const Button = ({ title }) => (
       .button {
         background: #3ce0b8;
         color: #fff;
-        padding: 8px 18px;
+        padding: 8px 22px;
         border-radius: 5px;
         cursor: pointer;
       }
