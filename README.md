@@ -16,17 +16,19 @@ We all know Docker in production environment is great. Stateless deployment, sha
 - No need to care about scalability
 - No need to set up your certificates
 
-Yes, docker-run.com is here: A new and better way to run Docker Containers in production.
+Yes, docker-run.com is here: A new and better way to run Docker containers in production.
 
 # How to use
 
-As you can see the above demo, all you have to do is input your docker image url. docker-run.com creates an unique domain to your application.
+As you can see the above demo, all you have to do is input your docker image url. docker-run.com creates an unique domain for your application.
 
-Deploy? It is quite easy, no need to install any CLI:
+Deploy? It is quite easy, no need to install any tools:
 
 ```
 curl -XPOST -H 'Authorization: YOUR_TOKEN' -d HOST/IMAGE:VERSION https://docker-run.com/APP_ID/renew
 ```
+
+And the Docker container will be renew without downtime.
 
 # Project status
 
