@@ -126,7 +126,7 @@ export default class Try extends React.Component {
                 )}
               </p>
               <p>
-                177e7ef0df69:
+                ea57c53235df:
                 {realProgress2 < PROGRESS_2_MAX ? (
                   /* prettier-ignore */
                   <span> Downloading [{progress2Arrow} {progress2ArrowSpace}] {realProgress2}MB/{PROGRESS_2_MAX}MB</span>
