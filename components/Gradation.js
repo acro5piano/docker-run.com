@@ -3,7 +3,7 @@ export const Gradation = ({ children }) => (
     {children}
     <style jsx>{`
       div {
-        background: linear-gradient(180deg, #deffe7 0%, rgba(255, 255, 255, 0) 100%), #c4ffbe;
+        background: linear-gradient(180deg, #ecf6ff 0%, rgba(255, 255, 255, 0) 100%), #81d8fd;
       }
     `}</style>
   </div>
