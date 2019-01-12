@@ -1,0 +1,51 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:10.3.0
+  working_directory: ~/repo
+
+aliases:
+  - &setup_awscli
+      name: install aws cli
+      command: |
+        sudo apt-get -y install python3 python3-pip
+        sudo pip3 install awscli
+        mkdir ~/.aws
+        echo '[default]' >> ~/.aws/credentials
+        echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials
+        echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
+        echo region = ap-northeast-1 >> ~/.aws/credentials
+
+jobs:
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: *setup_awscli
+      - run:
+          name: deploy
+          command: |
+            yarn build
+            aws configure set preview.cloudfront true
+            aws s3 sync --acl public-read ./out/ s3://docker-run.com/
+            aws cloudfront create-invalidation --distribution-id ERCZDB0NA4VCO --paths '/*'
+
+workflows:
+  version: 2
+  master_jobs:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
