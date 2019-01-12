@@ -158,9 +158,9 @@ export default class Try extends React.Component {
             <>
               <p> </p>
               <p>
-                Congrat! Your container is running at:{' '}
-                <a target="_blank" href="https://docker-run.com">
-                  https://docker-run.com
+                Congratulations! Your container is running at:{' '}
+                <a target="_blank" href="https://lbzsifwbocxf8yq.docker-run.com">
+                  https://lbzsifwbocxf8yq.docker-run.com
                 </a>
               </p>
             </>
@@ -173,10 +173,12 @@ export default class Try extends React.Component {
               padding: 12px 18px;
               color: #f8f8f8;
               width: 80%;
+              max-width: 800px;
+              overflow: scroll;
               margin: auto;
               border-radius: 4px;
               background: #333;
-              min-height: 300px;
+              min-height: 400px;
               margin-top: 45px;
             }
             .try-console a {
