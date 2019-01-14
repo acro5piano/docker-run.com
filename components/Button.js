@@ -1,9 +1,11 @@
-export const Button = ({ title }) => (
+export const Button = ({ title, onClick = () => {} }) => (
   <>
-    <div className="button">{title}</div>
+    <div className="button" onClick={onClick}>
+      {title}
+    </div>
     <style jsx>{`
       .button {
-        background: #707DED;
+        background: #707ded;
         color: #fff;
         padding: 8px 22px;
         border-radius: 5px;
