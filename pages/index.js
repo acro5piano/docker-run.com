@@ -5,6 +5,7 @@ import { Title } from '../components/Title'
 import { Button } from '../components/Button'
 import { SubTitle } from '../components/SubTitle'
 import { Gradation } from '../components/Gradation'
+import { TextField } from '../components/TextField'
 
 export default () => (
   <>
@@ -27,7 +28,7 @@ export default () => (
         <div className="form-container">
           <div>$ docker run</div>
           <div className="form-input">
-            <input placeholder="nginx:latest" />
+            <TextField placeholder="nginx:latest" />
           </div>
           <div className="form-container-button">
             <Link href="/try">
@@ -38,12 +39,6 @@ export default () => (
           </div>
         </div>
         <style jsx>{`
-          input {
-            border-radius: 4px;
-            border: none;
-            padding: 8px 12px;
-            background: #f9f9f9;
-          }
           .form-input {
             margin-left: 12px;
           }

@@ -1,23 +1,30 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button } from './Button'
+import { TextField } from './TextField'
 
 export class Header extends React.Component {
   state = {
     email: '',
+    sending: false,
   }
 
-  subscribe = () => {
-    fetch('https://hooks.slack.com/services/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', {
+  subscribe = async () => {
+    this.setState({ sending: true })
+    await fetch('https://hooks.slack.com/services/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', {
       method: 'POST',
       body: JSON.stringify({
         channel: 'notifications',
         text: `docker-run.com subscriber: ${this.state.email}`,
       }),
     })
+    this.setState({ sending: false })
+    window.alert('Thank you for subscribing us! Get in touch soon.')
   }
 
   render() {
+    const { sending } = this.state
+
     return (
       <>
         <div className="container">
@@ -33,19 +40,17 @@ export class Header extends React.Component {
                   GitHub
                 </a>
               </li>
-              <li>[WIP]Features</li>
-              <li>[WIP]Pricing</li>
-              <li>[WIP]Company</li>
+              <li>Features</li>
+              <li>Pricing</li>
+              <li>Company</li>
             </div>
             <div className="header-left">
-              <input
+              <TextField
                 placeholder="you@example.com"
                 value={this.state.email}
                 onChange={e => this.setState({ email: e.target.value })}
               />
-              <li>
-                <Button onClick={this.subscribe} title="Subscribe" />
-              </li>
+              <li>{sending ? '...' : <Button onClick={this.subscribe} title="Subscribe" />}</li>
             </div>
           </div>
 
