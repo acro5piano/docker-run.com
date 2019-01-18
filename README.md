@@ -2,6 +2,10 @@
 
 This is a demo site's repository of https://docker-run.com
 
+# Disclaimer
+
+Docker Run is still beta status, so the following descriptions have a lot of future features.
+
 # Install
 
 ```
