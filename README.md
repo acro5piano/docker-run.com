@@ -1,5 +1,16 @@
 # docker-run.com
 
+This is a demo site's repository of https://docker-run.com
+
+# Install
+
+```
+yarn install
+yarn start
+```
+
+Then open http://localhost:3000 and see the demo.
+
 https://docker-run.com
 
 docker-run.com enables you to run your Docker Containers in production. All you have to do is fill the url of your Docker image.
