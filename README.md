@@ -1,6 +1,10 @@
+IMPORTANT: We made dockder-run.com OSS, so please check out the following repository:
+
+https://github.com/getlarkin/larkin
+
 # docker-run.com
 
-This is a demo site's repository of https://docker-run.com
+This is a demo site's repository of https://larkin.sh
 
 # Disclaimer
 

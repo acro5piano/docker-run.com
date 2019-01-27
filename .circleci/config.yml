@@ -48,4 +48,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - NO_MORE_DEPLOY
